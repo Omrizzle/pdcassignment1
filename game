@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
 
 //hello
 
@@ -17,22 +18,23 @@ public class game {
      * @param args the command line arguments
      */
      public static void main(String[] args) {
-
-        // TODO Auto-generated method stub
-
-        System.out.println("Welcome, to deal or no deal");
-
-        System.out.println("please pick a case to keep");
-
-        boolean isPlaying = true;
-
-        while (isPlaying == true){
-
-         
-
-        Case[] cases = new Case[15];
-
-        Integer[] values = {1, 5, 10, 20, 25, 50, 100, 500, 1000, 2000, 3000, 5000, 10000, 20000, 50000};
+     
+     System.out.prinln("Welcome to Deal or No Deal!");
+     
+     Scanner ownCase = new Scanner(System.in);
+     
+     int choiceCase = 0;
+     
+     while(choiceCase < 1 || choiceCase > 15)
+     {
+        System.out.println("Choose your case (1-15: ");
+        choiceCase = ownCase.nextInt();
+     }
+     
+     System.out.println("\nPlayer Case: " +choiceCase);
+        
+     Case[] caseNo = new Case[15];
+     Integer[] values = {1, 5, 10, 20, 25, 50, 100, 500, 1000, 2000, 3000, 5000, 10000, 20000, 50000};
 
         
         Scanner userChoice = new Scanner(System.in);
